@@ -42,13 +42,28 @@
 
     var carousel = function() {
 		$(document).ready(function(){
-            $(".owl-carousel").owlCarousel({
+            $(".owl-small").owlCarousel({
                 loop:true,
-                margin:10,
-                nav:true,
+                dots: false,
+                nav: false,
                 responsive:{
                     0:{
-                        items:1
+                        items:2
+                    },
+                    600:{
+                        items:5
+                    },
+                    1000:{
+                        items:6
+                    }
+                }
+            });
+            $(".owl-carousel").owlCarousel({
+                loop:true,
+                dots: true,
+                responsive:{
+                    0:{
+                        items:2
                     },
                     600:{
                         items:3
@@ -57,7 +72,24 @@
                         items:5
                     }
                 }
-            })
+            });
+            $(".owl-carousel.not-dot").owlCarousel({
+                loop:true,
+                dots: false,
+                nav: false,
+                responsive:{
+                    0:{
+                        items:2
+                    },
+                    600:{
+                        items:3
+                    },
+                    1000:{
+                        items:5
+                    }
+                }
+            });
+            
         });
 	};
 	carousel();
